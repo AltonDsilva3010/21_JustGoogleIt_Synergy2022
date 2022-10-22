@@ -65,4 +65,19 @@ router.post(
   }
 );
 
+// @route    get api/event
+// @desc     Get all Event
+// @access   Public
+
+router.get("/", async (req, res) => {
+  try {
+    let filter = {};
+    let eventsdata = await Event.find(filter);
+    res.json(eventsdata);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send("Server Error");
+  }
+});
+
 module.exports = router;
