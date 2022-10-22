@@ -1,29 +1,65 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import "./AddEvent.css";
 
 const AddEvent = () => {
-  const [vol, setVol] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    description: "",
+    dateofevent: "",
+    location: "",
+    type: "",
+    price: 0,
+  });
 
-  const handleChange = (event) => {
-    if (event.target.value === "yes") {
-      setVol(true);
-    } else {
-      setVol(false);
-    }
+  const { name, description, dateofevent, location, type, price } = formData;
+
+  const onChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    console.log(formData);
   };
 
   return (
     <div className="Auth-form-container">
-      <form className="Auth-form">
+      <form className="Auth-form" onSubmit={(e) => onSubmit(e)}>
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Add Event</h3>
           <div className="form-group mt-3">
             <label>Event Name</label>
-            <input type="text" className="form-control mt-1" name="Ename" />
+            <input
+              type="text"
+              className="form-control mt-1"
+              value={name}
+              onChange={onChange}
+              name="name"
+              required
+            />
+          </div>
+          <div className="form-group mt-3">
+            <label>Event Description</label>
+            <input
+              type="text"
+              className="form-control mt-1"
+              value={description}
+              onChange={onChange}
+              name="description"
+            />
           </div>
           <div className="form-group mt-3">
             <label>Type</label>
-            <input type="text" className="form-control mt-1" name="Type" />
+            <input
+              type="text"
+              className="form-control mt-1"
+              name="type"
+              onChange={onChange}
+              value={type}
+              required
+            />
           </div>
           <div className="form-group mt-3">
             <label>
@@ -36,56 +72,34 @@ const AddEvent = () => {
                   className="form-control"
                   placeholder="Venue"
                   aria-label="City"
+                  onChange={onChange}
+                  value={location}
+                  name="location"
+                  required
                 />
               </div>
             </div>
           </div>
           <div className="form-group mt-3">
             <label>Entry Fee</label>
-            <input type="number" className="form-control mt-1" name="Fees" />
+            <input
+              type="number"
+              className="form-control mt-1"
+              name="price"
+              onChange={onChange}
+              value={price}
+            />
           </div>
-          <div className="form-group mt-3">
-            <p>Do you need volunteer</p>
-            <div className="item">
-              <label htmlFor="yes" className="radio">
-                Yes
-              </label>
-              <input
-                type="radio"
-                name="select"
-                id="yes"
-                value="yes"
-                onChange={handleChange}
-              />
-            </div>
-            <div className="item">
-              <label htmlFor="no" className="radio">
-                No
-              </label>
-              <input
-                type="radio"
-                name="select"
-                id="no"
-                value="no"
-                onChange={handleChange}
-              />
-            </div>
-          </div>
-
-          {vol && (
-            <div className="form-group mt-3">
-              <label>Strength</label>
-              <input
-                type="number"
-                className="form-control mt-1"
-                name="Volunteers"
-              />
-            </div>
-          )}
-
           <div className="form-group mt-3">
             <label>Date of Event</label>
-            <input type="date" className="form-control mt-1" name="Date" />
+            <input
+              type="date"
+              className="form-control mt-1"
+              name="dateofevent"
+              onChange={onChange}
+              value={dateofevent}
+              required
+            />
           </div>
           <div className="d-grid gap-2 mt-3">
             <button type="submit" className="btn btn-primary">

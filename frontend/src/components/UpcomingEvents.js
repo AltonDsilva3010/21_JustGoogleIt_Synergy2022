@@ -12,7 +12,7 @@ const UpcomingEvents = () => {
     dispatch(getAllEvents());
   }, []);
   eventsdata = useSelector((state) => state.event.events);
-  console.log(eventsdata);
+
   return (
     <div className="upcoming-events">
       <h1>Upcoming Events</h1>
@@ -21,7 +21,7 @@ const UpcomingEvents = () => {
           ? eventsdata.map((event, index) => {
               return (
                 <div>
-                  <EventCard key={event.id} {...event} />
+                  <EventCard key={event._id} {...event} />
                 </div>
               );
             })

@@ -14,7 +14,6 @@ const EventSchema = new mongoose.Schema({
   },
   price: {
     type: Number,
-    required: true,
   },
   dateofevent: {
     type: Date,

@@ -18,6 +18,40 @@ export const getAllEvents = createAsyncThunk("event/getAllEvents", async () => {
   }
 });
 
+//addEvent
+export const addEvent = createAsyncThunk(
+  "event/addEvent",
+  async ({ name, description, dateofevent, location, type, price }) => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const body = JSON.stringify({
+      name,
+      description,
+      dateofevent,
+      location,
+      type,
+      price,
+    });
+
+    try {
+      const res = await axios.post(
+        "http://localhost:5000/api/event",
+        body,
+        config
+      );
+      console.log(res.data);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+      return error;
+    }
+  }
+);
+
 const eventSlice = createSlice({
   name: "event",
   initialState: initialState,
@@ -34,6 +68,24 @@ const eventSlice = createSlice({
       };
     },
     [getAllEvents.rejected]: (state, { payload }) => {
+      return {
+        ...state,
+        loading: false,
+        errors: payload,
+      };
+    },
+    //addEvent Actions
+    [addEvent.pending]: (state) => {
+      state.loading = true;
+    },
+    [addEvent.fulfilled]: (state, { payload }) => {
+      return {
+        ...state,
+        loading: false,
+        event: payload,
+      };
+    },
+    [addEvent.rejected]: (state, { payload }) => {
       return {
         ...state,
         loading: false,
