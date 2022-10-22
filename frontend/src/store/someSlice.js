@@ -47,6 +47,7 @@ export const addEvent = createAsyncThunk(
       return res.data;
     } catch (error) {
       console.log(error);
+
       return error;
     }
   }

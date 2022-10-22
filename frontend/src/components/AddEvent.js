@@ -2,8 +2,11 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import "./AddEvent.css";
+import { addEvent } from "../store/someSlice";
 
 const AddEvent = () => {
+  const dispatch = useDispatch();
+
   const [formData, setFormData] = useState({
     name: "",
     description: "",
@@ -21,6 +24,7 @@ const AddEvent = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    dispatch(addEvent(formData));
     console.log(formData);
   };
 

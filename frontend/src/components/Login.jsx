@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { loadUser, loginUser } from "../store/userSlice";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -30,7 +31,7 @@ const Login = () => {
           <div className="text-center">
             Not registered?{" "}
             <span className="link-primary">
-              <a href="/signup">Sign In</a>
+              <Link to="/signup">Sign In</Link>
             </span>
           </div>
           <div className="form-group mt-3">
