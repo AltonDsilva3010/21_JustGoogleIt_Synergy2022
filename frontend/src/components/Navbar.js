@@ -80,7 +80,7 @@ const NavbarComponent = () => {
         <Container fluid>
           <Navbar.Brand>
             <Link className="logo" to="/">
-              BOOKMYSEAT
+              CRESCENDO
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

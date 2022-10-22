@@ -1,62 +1,56 @@
 const eventsdata = [
   {
     organizer: "1",
-    name: "Sunburn Festival",
-    description:
-      "This festival is the best festival in Goa that happens every 2 years filled with young and energetic croud",
+    name: "Mic Drop",
+    description: "This is annual event of our council",
     price: 45.03,
     dateofevent: "22-09-2022",
-    location: "Panji,Goa",
+    location: "Fr.Agnel,Bandra",
+    type: "Music Festival",
+  },
+  {
+    organizer: "1",
+    name: "Hackathon",
+    description: "This is annual Hackathon of our Council",
+    price: 45.03,
+    dateofevent: "22-09-2022",
+    location: "Fr.Agnel,Bandra",
     type: "Music Festival",
   },
   {
     organizer: "1",
     name: "Sunburn Festival",
-    description:
-      "This festival is the best festival in Goa that happens every 2 years filled with young and energetic croud",
+    description: "This is annual event of our council",
     price: 45.03,
     dateofevent: "22-09-2022",
-    location: "Panji,Goa",
+    location: "Fr.Agnel,Bandra",
     type: "Music Festival",
   },
   {
     organizer: "1",
     name: "Sunburn Festival",
-    description:
-      "This festival is the best festival in Goa that happens every 2 years filled with young and energetic croud",
+    description: "This is annual event of our council",
     price: 45.03,
     dateofevent: "22-09-2022",
-    location: "Panji,Goa",
+    location: "Fr.Agnel,Bandra",
     type: "Music Festival",
   },
   {
     organizer: "1",
     name: "Sunburn Festival",
-    description:
-      "This festival is the best festival in Goa that happens every 2 years filled with young and energetic croud",
+    description: "This is annual event of our council",
     price: 45.03,
     dateofevent: "22-09-2022",
-    location: "Panji,Goa",
+    location: "Fr.Agnel,Bandra",
     type: "Music Festival",
   },
   {
     organizer: "1",
     name: "Sunburn Festival",
-    description:
-      "This festival is the best festival in Goa that happens every 2 years filled with young and energetic croud",
+    description: "This is annual event of our council",
     price: 45.03,
     dateofevent: "22-09-2022",
-    location: "Panji,Goa",
-    type: "Music Festival",
-  },
-  {
-    organizer: "1",
-    name: "Sunburn Festival",
-    description:
-      "This festival is the best festival in Goa that happens every 2 years filled with young and energetic croud",
-    price: 45.03,
-    dateofevent: "22-09-2022",
-    location: "Panji,Goa",
+    location: "Fr.Agnel,Bandra",
     type: "Music Festival",
   },
 ];

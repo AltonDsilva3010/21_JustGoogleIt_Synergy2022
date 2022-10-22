@@ -15,6 +15,10 @@
   color: black;
   margin: 8px 0px 0px 0px;
 }
+.navlinks button {
+  background-color: transparent;
+  border: none;
+}
 
 .logo {
   text-decoration: none;

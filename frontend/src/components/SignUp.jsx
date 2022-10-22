@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   return (
@@ -9,7 +10,7 @@ const SignUp = () => {
           <div className="text-center">
             Already registered?{" "}
             <span className="link-primary">
-              <a href="/">Log In</a>
+              <Link to="/login">Log In</Link>
             </span>
           </div>
           <div className="form-group mt-3">

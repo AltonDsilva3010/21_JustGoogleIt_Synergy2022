@@ -34,27 +34,9 @@ const AddEvent = () => {
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Address"
+                  placeholder="Venue"
                   aria-label="City"
                 />
-              </div>
-              <div className="row g-2">
-                <div className="col-sm">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="State"
-                    aria-label="State"
-                  />
-                </div>
-                <div className="col-sm">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="City"
-                    aria-label="City"
-                  />
-                </div>
               </div>
             </div>
           </div>
