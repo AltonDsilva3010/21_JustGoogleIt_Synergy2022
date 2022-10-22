@@ -17,7 +17,8 @@ router.post(
   "/",
   [
     check("name", "Name is required").not().isEmpty(),
-    check("email", "Please include a valid email").isEmail(),
+    check("rollno", "Rollno is required").not().isEmpty(),
+    check("classno", "Class is required").not().isEmpty(),
     check(
       "password",
       "Please enter a password with 6 or more characters"
@@ -29,11 +30,11 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { name, email, password, role, idproof, verified } = req.body;
+    const { name, rollno, classno, password, role } = req.body;
 
     try {
       //See if user Exists
-      let user = await User.findOne({ email });
+      let user = await User.findOne({ rollno });
 
       if (user) {
         return res
@@ -43,11 +44,10 @@ router.post(
 
       user = new User({
         name,
-        email,
+        rollno,
+        classno,
         password,
         role,
-        idproof,
-        verified,
       });
 
       //Encrypt password

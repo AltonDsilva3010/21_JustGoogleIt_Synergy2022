@@ -4,10 +4,14 @@ const UserSchema = new mongoose.Schema({
   name: {
     type: String,
   },
-  email: {
-    type: String,
+  rollno: {
+    type: Number,
     required: true,
     unique: true,
+  },
+  classno: {
+    type: String,
+    required: true,
   },
   password: {
     type: String,
@@ -15,18 +19,15 @@ const UserSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ["organizer", "customer", "admin"],
-    default: "customer",
+    enum: ["organizer", "student", "admin"],
+    default: "student",
     required: true,
   },
-  idproof: {
-    type: String,
-    unique: true,
-  },
-  verified: {
-    type: Boolean,
-  },
   events: {
+    type: [mongoose.Schema.Types.ObjectId],
+    ref: "event",
+  },
+  organized: {
     type: [mongoose.Schema.Types.ObjectId],
     ref: "event",
   },

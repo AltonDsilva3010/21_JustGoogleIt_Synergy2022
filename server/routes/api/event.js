@@ -41,28 +41,23 @@ router.post(
 
     try {
       let organizer = await User.findById(req.user.id);
-      let event = {};
+      let newevent = {};
 
-      //If User is a Customer trying to create a Event
-      if (organizer.role !== "organizer" && organizer.role !== "admin") {
+      //If User is a Student trying to create a Event
+      if (organizer.role == "student") {
         return res
           .status(403)
-          .json({ errors: [{ msg: "Customer cannot create an Event" }] });
+          .json({ errors: [{ msg: "Student cannot create an Event" }] });
       }
-      //If User is not verified!
-      if (!organizer.verified) {
-        return res
-          .status(403)
-          .json({ errors: [{ msg: "You're Not Verified" }] });
-      }
-      event = new Event(EventFields);
 
-      await event.save(async function (err, event) {
-        organizer.events.push(event.id); //Add the event created in organizers events array
+      newevent = new Event(EventFields);
+
+      await newevent.save(async function (err, newevent) {
+        organizer.organized.push(newevent.id); //Add the event created in organizers organized array
         await organizer.save();
       });
 
-      res.json(event);
+      res.json(newevent);
     } catch (error) {
       console.error(error.message);
       res.status(500).send("Server Error");

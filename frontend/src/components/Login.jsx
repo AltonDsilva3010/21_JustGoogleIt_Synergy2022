@@ -7,9 +7,9 @@ const Login = () => {
   const dispatch = useDispatch();
 
   let navigate = useNavigate();
-  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [formData, setFormData] = useState({ rollno: "", password: "" });
 
-  const { email, password } = formData;
+  const { rollno, password } = formData;
 
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -34,14 +34,14 @@ const Login = () => {
             </span>
           </div>
           <div className="form-group mt-3">
-            <label>Email address</label>
+            <label>Roll no</label>
             <input
-              type="email"
+              type="number"
               className="form-control mt-1"
-              placeholder="Enter email"
-              value={email}
+              placeholder="Enter Roll Number"
+              value={rollno}
               onChange={onChange}
-              name="email"
+              name="rollno"
             />
           </div>
           <div className="form-group mt-3">

@@ -28,14 +28,14 @@ export const loadUser = createAsyncThunk("user/loadUser", async () => {
 //Login User
 export const loginUser = createAsyncThunk(
   "user/loginUser",
-  async ({ email, password }, { dispatch, rejectWithValue }) => {
+  async ({ rollno, password }, { dispatch, rejectWithValue }) => {
     const config = {
       headers: {
         "Content-Type": "application/json",
       },
     };
 
-    const body = JSON.stringify({ email, password });
+    const body = JSON.stringify({ rollno, password });
 
     try {
       const res = await axios.post(

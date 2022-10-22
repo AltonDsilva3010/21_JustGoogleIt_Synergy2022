@@ -88,7 +88,7 @@ const NavbarComponent = () => {
             {!isLoading && (
               <>
                 {isAuthenticated
-                  ? userRole == "customer"
+                  ? userRole == "student"
                     ? userLinks
                     : userRole == "organizer"
                     ? organizerLinks
