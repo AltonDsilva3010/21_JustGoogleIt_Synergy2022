@@ -1,0 +1,10 @@
+Todo:
+
+1.Add all events route in server
+2.Create a async thunk for 'all events'
+3.Create the user page
+4.Admin verify page
+5.Create route to display unverified organizers
+6.Create async thunk for verify users
+7.Add protected routes
+8.Add page for adding (posting events)

@@ -1,0 +1,33 @@
+.navbar {
+  width: 99vw;
+  /* background-color: rgb(174, 174, 174, 0.5); */
+}
+
+.navbar-brand {
+  font-size: 25px;
+  font-family: "Montserrat", sans-serif;
+  margin: 0px 0px 5px 20px;
+}
+
+.navlinks {
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  margin: 8px 0px 0px 0px;
+}
+
+.logo {
+  text-decoration: none;
+  color: black;
+}
+
+.linksnav {
+  text-decoration: none;
+  color: black;
+  margin: 0px 25px 0px 0px;
+}
+
+.linksnav:hover,
+.logo:hover {
+  color: black;
+}

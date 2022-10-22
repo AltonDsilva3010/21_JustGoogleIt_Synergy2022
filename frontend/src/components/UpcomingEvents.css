@@ -1,0 +1,11 @@
+.events-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.upcoming-events h1 {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  margin: 20px 0px 20px 0px;
+  font-size: 30px;
+}
